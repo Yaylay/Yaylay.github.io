@@ -1,12 +1,104 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+ <meta charset="UTF-8"> 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 <head>
-<title>Page Title</title>
+<title>Etusivu</title>
+<link rel="stylesheet" href="styles.css">
 </head>
+<style>
+h1 {
+  text-shadow: 3px 2px white;
+}
+</style>
 <body>
+<div class="header">
+  <h1>Rainerin rauta</h1>
+  <p>loma alkaa:</p>
+<!-- Display the countdown timer in an element -->
+<p id="demo"></p>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Apr 26, 2019 15:30:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is finished, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<marquee behavior="scroll" direction="left">däb däb dääääääb</marquee>
+</div>
+
+<div class="topnav">
+  <a href="index.html">Etusivu</a>
+  <a href="cats.html">Cäts</a>
+  <a href="memes.html">Meemees</a>
+  <a href="tuotteet.html">Tuotteet</a>
+  <a href="yhteystiedot.html" style="float:right">Yhteystiedot</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <img src="/img/dab.gif" alt="däb" width="500" height="333">
+      <p>Däb däb däb däb däb däb</p>
+    </div>
+<br>
+<br>
+<br>
+<marquee behavior="scroll" direction="left">
+<img src="/img/floss2.gif" alt="Swimming fish">
+</marquee>
+
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Me</h2>
+      <img src="/img/sanic.png" alt="me" width="300" height="333">
+      <p>Feeling cute, might delete later</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Footer</h2>
+  <marquee behavior="alternate">
+<img src="/img/floss.gif" width="855" height="200" alt="floss">
+</marquee>
+
+</div>
 
 </body>
-</html> 
+</html>
